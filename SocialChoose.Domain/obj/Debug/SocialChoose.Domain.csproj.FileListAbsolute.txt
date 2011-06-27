@@ -1,0 +1,6 @@
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Domain\bin\Debug\SocialChoose.Domain.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Domain\bin\Debug\SocialChoose.Domain.pdb
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Domain\bin\Debug\Nen.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Domain\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Domain\obj\Debug\SocialChoose.Domain.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Domain\obj\Debug\SocialChoose.Domain.pdb
