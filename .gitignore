@@ -2,5 +2,7 @@ glob:obj
 glob:*.suo
 glob:*.user
 glob:SocialChoose.Domain/bin
+glob:SocialChoose.Domain/obj
 glob:SocialChoose.Web/bin
+glob:SocialChoose.Web/obj
 glob:*.dbmdl
