@@ -10,7 +10,7 @@
         var _locations = [];
         var _schools = [];
         var that = this;
-
+        var _resultCache = {};
         function getValue(key,MemberName, toFilter) {
             if (arguments.length == 2)
                 toFilter = _data;
@@ -21,6 +21,27 @@
                 return kvp.Value;
             else
                 return null;
+        }
+        function processSearchResults(resultSet) {
+            var container = $('#Results-Container').removeClass('loading');
+            if (resultSet.totalProposals == 0)
+                container.append('No projects found. Try another search!');
+            $.tmpl("ProposalTemplate", resultSet.proposals).appendTo(container);
+
+            $('.progress-bar', container).each(function () {
+                $(this).progressbar({ value: $(this).data('complete') });
+            })
+            $('.fund-button', container).button();
+
+            $('.refresh-button', container).click(function (e) {
+                e.preventDefault();
+                var term = $('.category-listing .ui-state-selected').text();
+                that.loadResult(term, true)
+            }).button({
+                icons: {
+                    primary: "ui-icon-refresh"
+                }
+            });
         }
         this.getData = function () { return _data };
         this.getLocations = function () {
@@ -60,27 +81,26 @@
             $("#Locations-List li a").click(function (e) {
                 e.preventDefault();
                 $this = $(this);
-                $this.closest('ul').find('a').removeClass('ui-state-selected');
+                $this.closest('ul.category-listing').find('a').removeClass('ui-state-selected');
                 $this.addClass('ui-state-selected');
                 var term = $this.text();
-                that.loadResult(term);
+                that.loadResult(term,false);
             });
         }
 
-        this.loadResult = function (value) {
-            var container = $('#Results-Container').empty();
+        this.loadResult = function (value, withRefresh) {
+            var container = $('#Results-Container').empty().addClass('loading');
+            container.append('<a href="#" class="refresh-button">Refresh</a>');
+            if (value in _resultCache && !withRefresh) {
+                processSearchResults(_resultCache[value]);
+                return;
+            }
             $.getJSON('@Url.Action("Search","Projects")?value=' + value, function (result) {
-                resultData = $.parseJSON(result);
-                if (resultData.totalProposals == 0)
-                    container.append('No projects found. Try another search!');
-                $.tmpl("ProposalTemplate", resultData.proposals).appendTo(container);
-
-                $('.progress-bar', container).each(function () {
-                    $(this).progressbar({ value: $(this).data('complete') });
-                })
-                $('.fund-button', container).button();
+                _resultCache[value] = $.parseJSON(result);
+                processSearchResults(_resultCache[value]);
             });
         }
+
 
         this.getLocations();
     }
@@ -88,7 +108,8 @@
     $(function () {
         $('#Explore-Link').addClass('ui-state-selected').removeClass('ui-state-default');
         $("#Proposal-Template").template("ProposalTemplate");
-        $.getJSON('@Url.Action("Retrieve","Projects")', function (data) {
+        
+        $.getJSON('@Url.Action("Retrieve","Projects")?timestamp=' + new Date().valueOf(), function (data) {
             if (data.authRequired != undefined) {
                 window.location.assign(data.authRequired);
                 return;
@@ -102,7 +123,7 @@
     });
 </script>
 <div id="Menu-Container">
-    <ul>
+    <ul class="category-listing">
         <li>Locations
             <ul id="Locations-List">
             </ul>
@@ -120,8 +141,9 @@
             <a class="fund-button" href="${fundURL}">Fund This Project </a><a class="learn-more" href="${proposalURL}">Learn More</a><br />
             <span class="school-info">${schoolName} <span class="city">${city}, ${state}</span></span>
             <p>"${fulfillmentTrailer}" <br /> <span class="teacher">- ${teacherName}</span></p>
-            <div class="progress-bar" data-complete="${percentFunded}" />
-            <div class="funding-information">Total cost is ${totalPrice}, ${costToComplete} to go.</div>
+            <div class="funding-information">
+            <div class="progress-bar" data-complete="${percentFunded}" title="${percentFunded} percent funded." />
+            <span>Total cost is ${totalPrice}, ${costToComplete} to go.</span></div>
         </div>
         
     </div>
