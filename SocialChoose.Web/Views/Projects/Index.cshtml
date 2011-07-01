@@ -41,7 +41,7 @@
                 icons: {
                     primary: "ui-icon-refresh"
                 }
-            });
+            }).removeClass('ui-helper-hidden');
         }
         this.getData = function () { return _data };
         this.getLocations = function () {
@@ -90,7 +90,7 @@
 
         this.loadResult = function (value, withRefresh) {
             var container = $('#Results-Container').empty().addClass('loading');
-            container.append('<a href="#" class="refresh-button">Refresh</a>');
+            container.append('<a href="#" class="refresh-button ui-helper-hidden">Refresh</a>');
             if (value in _resultCache && !withRefresh) {
                 processSearchResults(_resultCache[value]);
                 return;
@@ -103,6 +103,7 @@
 
 
         this.getLocations();
+        $('#Results-Container').removeClass('loading').append('<p>Select an item to search for from the left to get started.</p>');
     }
 
     $(function () {
@@ -130,8 +131,8 @@
         </li>
     </ul>
 </div> 
-<div id="Results-Container">
-    <p>Select an item to search for from the left to get started.</p>
+<div id="Results-Container" class="loading">
+    
 </div>
 <script id="Proposal-Template" type="text/x-jquery-tmpl">
     <div class="proposal-wrapper ui-helper-clearfix">
