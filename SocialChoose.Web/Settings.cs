@@ -39,5 +39,12 @@ namespace SocialChoose
                 return ConfigurationManager.AppSettings["CalaisApiKey"];
             }
         }
+        public static string DonorsChooseApiKey
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["DonorsChooseApiKey"];
+            }
+        }
     }
 }
