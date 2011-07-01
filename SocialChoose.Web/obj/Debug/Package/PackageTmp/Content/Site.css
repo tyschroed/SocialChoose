@@ -1,0 +1,129 @@
+body
+{
+    font-size: 75%;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    margin:0px;
+    padding:0px;
+}
+ul 
+{
+    margin:0px;
+}
+.account-list 
+{
+    width:200px;
+}
+.account-list li
+{
+    display:block;
+    float:left;
+    width:200px;
+}
+.account-list .ui-icon 
+{
+    float:left;
+}
+
+#Header ul 
+{
+    list-style:none;
+    display:inline-block;
+}
+#Header ul li 
+{
+    display:inline-block;
+    font-weight:bold;
+    font-size:1.4em;
+    padding:5px;
+    margin-right:10px;
+}
+#Header,#Content  
+{
+    padding:10px;
+}
+#Header a 
+{
+    text-decoration:none;
+}
+#Header 
+{
+    background-color:#EAE8E8;
+}
+#Logo 
+{
+    position:relative;
+    top:10px;
+    border:none;
+}
+#Logo img 
+{
+    border:none;
+}
+#Footer span
+{
+    float:right;
+    color:#999797;
+    display:inline-block;
+    padding:10px;
+}
+#Footer span a 
+{
+    color:#7C7C7C;
+}
+
+.proposal-wrapper .progress-bar 
+{
+    width:100px;
+}
+
+.proposal-wrapper 
+{
+    padding:13px;
+    width:600px;
+    border:1px solid #ccc;
+    margin-bottom:20px;
+}
+.proposal-wrapper img, .right-col
+{
+    float:left;
+}
+.proposal-wrapper img 
+{
+    border:1px solid #333333;
+}
+.proposal-wrapper a 
+{
+    margin:10px;
+}
+.proposal-wrapper .learn-more, #Locations-List a
+{
+    color:#6FB2E1;
+    text-decoration:none;
+    font-size:.9em;
+    font-weight:bold;
+}
+.proposal-wrapper .learn-more:hover, #Locations-List a:hover
+{
+    text-decoration:underline;
+    color:#007CC3;
+}
+.proposal-wrapper h4 
+{
+    margin-left:10px;    
+}
+#Footer 
+{
+    clear:both;
+}
+#Menu-Container 
+{
+    float:left;
+    width:330px;
+}
+#Results-Container 
+{
+    float:left;
+    width:660px;
+}
