@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "SocialChoose | Find Projects";
+}
+
+<h1>Lets Find Some Projects</h1>
+<p>In order to find projects that match your interests, add links to your accounts below and we'll find items relevant to you.</p>
+<ul class="account-list">
+    <li id="Facebook-Info">@Html.ActionLink("Facebook","FBLogOn",new{controller="Auth",returnUrl=this.Url.RouteUrl(this.ViewContext.RouteData.Values)}) @{if (ViewData.ContainsKey("HasFacebook"))
+                                                                                                                                                          { <span class="ui-icon ui-icon-check" title="Facebook account linked."></span> }}</li>
+    <li id="Twitter-Info">Twitter (Coming Soon)</li>
+</ul>
+@Html.ActionLink("View Projects","Index",new{controller="Projects"})

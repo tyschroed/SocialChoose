@@ -1,0 +1,14 @@
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\SocialChoose.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\SocialChoose.pdb
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\Nen.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\SocialChoose.Domain.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\SocialChoose.Domain.pdb
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\obj\Debug\SocialChoose.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\obj\Debug\SocialChoose.pdb
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\Facebook.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\Facebook.xml
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\CalaisDotNet.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\Newtonsoft.Json.dll
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\CalaisDotNet.pdb
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Web\bin\Newtonsoft.Json.xml

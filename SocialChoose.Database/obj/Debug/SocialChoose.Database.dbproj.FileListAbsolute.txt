@@ -1,0 +1,6 @@
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Database\sql\debug\SocialChoose.Database_Database.sqlsettings
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Database\sql\debug\SocialChoose.Database_Database.sqldeployment
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Database\sql\debug\SocialChoose.Database_Database.sqlcmdvars
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Database\sql\debug\SocialChoose.Database.deploymanifest
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Database\sql\debug\SocialChoose.Database.dbschema
+C:\Users\Tyler\github\SocialChoose\SocialChoose.Database\obj\Debug\SocialChoose.Database.dbschema
