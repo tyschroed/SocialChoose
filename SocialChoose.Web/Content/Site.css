@@ -35,8 +35,8 @@ ul
 {
     display:inline-block;
     font-weight:bold;
-    font-size:2em;
-    padding:10px;
+    font-size:1.4em;
+    padding:5px;
     margin-right:10px;
 }
 #Header,#Content  
@@ -97,14 +97,14 @@ ul
 {
     margin:10px;
 }
-.proposal-wrapper .learn-more 
+.proposal-wrapper .learn-more, #Locations-List a
 {
     color:#6FB2E1;
     text-decoration:none;
     font-size:.9em;
     font-weight:bold;
 }
-.proposal-wrapper .learn-more:hover 
+.proposal-wrapper .learn-more:hover, #Locations-List a:hover
 {
     text-decoration:underline;
     color:#007CC3;

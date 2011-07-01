@@ -53,14 +53,16 @@
                 });
             }
             var locationContainer = $("#Locations-List");
-            console.log(_locations);
             $.each(_locations, function () {
                 locationContainer.append("<li><a href='#'>" + this + "</a></li>");
             });
 
-            $("#Locations-List li").click(function (e) {
+            $("#Locations-List li a").click(function (e) {
                 e.preventDefault();
-                var term = $(this).text();
+                $this = $(this);
+                $this.closest('ul').find('a').removeClass('ui-state-selected');
+                $this.addClass('ui-state-selected');
+                var term = $this.text();
                 that.loadResult(term);
             });
         }
